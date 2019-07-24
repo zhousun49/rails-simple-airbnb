@@ -13,11 +13,14 @@ Flat.create!(
   address: '10 Clifton Gardens London W9 1DT',
   description: 'A lovely summer feel for this spacious garden flat. Two double bedrooms, open plan living area, large kitchen and a beautiful conservatory',
   price_per_night: 75,
-  number_of_guests: 3
+  number_of_guests: 3,
+  img: 'http://lorempixel.com/640/480/'
 )
 
+
 5.times do
-  Flat.create({ name: Faker::Company.bs, address: Faker::Address.street_address, price_per_night: rand(50..100), number_of_guests: rand(4..10), description: Faker::Quotes::Shakespeare.as_you_like_it_quote })
+  url = 'http://lorempixel.com/640/480/'
+  Flat.create({ name: Faker::Company.bs, address: Faker::Address.street_address, price_per_night: rand(50..100), number_of_guests: rand(4..10), description: Faker::Quotes::Shakespeare.as_you_like_it_quote, img: url })
 end
 
 p 'created'
